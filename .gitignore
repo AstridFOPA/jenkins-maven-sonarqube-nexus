@@ -36,3 +36,11 @@ build/
 .terraform.lock.hcl
 **/.terraform/*
 crash.log
+
+### Binaries ###
+*.exe
+*.zip
+*.tar.gz
+*.iso
+*.dll
+*.bin
