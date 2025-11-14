@@ -7,6 +7,7 @@ resource "aws_instance" "SonarQube_Hosted_Instance" {
   vpc_security_group_ids  = ["sg-017941dabc0afb5f6"]
   user_data = <<-EOF
 #!/bin/bash
+# Userdata script to Install SonarQube on Ubuntu 24.04 VM
 cp /etc/sysctl.conf /root/sysctl.conf_backup
 cat <<EOT> /etc/sysctl.conf
 vm.max_map_count=262144
@@ -109,7 +110,7 @@ server{
         proxy_pass  http://127.0.0.1:9000;
         proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
         proxy_redirect off;
-              
+            
         proxy_set_header    Host            \$host;
         proxy_set_header    X-Real-IP       \$remote_addr;
         proxy_set_header    X-Forwarded-For \$proxy_add_x_forwarded_for;

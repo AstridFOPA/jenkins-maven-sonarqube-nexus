@@ -1,8 +1,5 @@
-provider "aws" {
-  region = "us-east-1"
-}
 
-resource "aws_instance" "Maven_Hosted_Instance" {
+resource "aws_instance" "Nexus_Hosted_Instance" {
   ami                     = "ami-0ecb62995f68bb549" # Ubuntu Server 24.04 LTS (HVM), SSD Volume Type
   instance_type           = "t2.large"
   key_name                = "mykeypair"
